@@ -47,8 +47,8 @@ public class DemoJCombox extends JFrame {
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
 
-        JPanel inputPanel = new JPanel();
-        inputPanel.setLayout(new GridLayout(4, 2, 10, 10));
+        JPanel p1 = new JPanel();
+        p1.setLayout(new GridLayout(4, 2, 10, 10));
 
 
         lbNum1 = new JLabel("Số 1");
@@ -57,41 +57,43 @@ public class DemoJCombox extends JFrame {
         lbReult = new JLabel("Kết quả");
 
 
-        inputPanel.add(lbNum1);
+        p1.add(lbNum1);
         txtNum1 = new JTextField();
-        inputPanel.add(txtNum1);
+        p1.add(txtNum1);
 
 
-        inputPanel.add(lbNum2);
+        p1.add(lbNum2);
         txtNum2 = new JTextField();
-        inputPanel.add(txtNum2);
+        p1.add(txtNum2);
 
 
-        inputPanel.add(lbOp);
+        p1.add(lbOp);
         String[] operations = {"Cộng", "Trừ", "Nhân", "Chia"};
         cboOp = new JComboBox<>(operations);
-        inputPanel.add(cboOp);
+        p1.add(cboOp);
 
 
-        inputPanel.add(lbReult);
+        p1.add(lbReult);
         txtResult = new JTextField();
         txtResult.setEditable(false);
-        inputPanel.add(txtResult);
+        p1.add(txtResult);
 
-        add(inputPanel, BorderLayout.CENTER);
+        add(p1, BorderLayout.CENTER);
 
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        
+        
+        JPanel p2 = new JPanel();
+        p2.setLayout(new GridLayout(1, 2, 10, 10));
 
 
         btnPhepTinh = new JButton("Tính");
-        buttonPanel.add(btnPhepTinh);
+        p2.add(btnPhepTinh);
 
         btnNhapLai = new JButton("Nhập lại");
-        buttonPanel.add(btnNhapLai);
+        p2.add(btnNhapLai);
 
-        add(buttonPanel, BorderLayout.SOUTH);
+        add(p2, BorderLayout.SOUTH);
 
 
         btnPhepTinh.addActionListener(new ActionListener() {
