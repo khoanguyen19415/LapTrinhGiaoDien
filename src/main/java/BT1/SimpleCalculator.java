@@ -21,7 +21,7 @@ public class SimpleCalculator extends JFrame {
 
     private JLabel lbNum1, lbNum2, lbResult;
     private JTextField txtNum1, txtNum2, txtResult;
-    private JButton btnAdd, btnSub, btnMul, btnDiv;
+    private JButton btnAdd, btnSub, btnMul, btnDiv,btnEnd;
 
     public SimpleCalculator(String title) {
         super(title);
@@ -36,24 +36,26 @@ public class SimpleCalculator extends JFrame {
         p.add(txtNum2 = new JTextField(10));
         p.add(txtResult = new JTextField(10));
 
-        p.add(btnAdd = new JButton("Add"));
-        p.add(btnSub = new JButton("Sub"));
-        p.add(btnMul = new JButton("Mul"));
-        p.add(btnDiv = new JButton("Div"));
+        p.add(btnAdd = new JButton("Cộng"));
+        p.add(btnSub = new JButton("Trừ"));
+        p.add(btnMul = new JButton("Nhân"));
+        p.add(btnDiv = new JButton("Chia"));
+        p.add(btnEnd = new JButton("Kết thúc"));
 
         lbNum1.setBounds(10, 10, 250, 30);
-        txtNum1.setBounds(120, 10, 300, 30);
+        txtNum1.setBounds(120, 10, 400, 30);
 
         lbNum2.setBounds(10, 50, 250, 30);
-        txtNum2.setBounds(120, 50, 300, 30);
+        txtNum2.setBounds(120, 50, 400, 30);
 
         lbResult.setBounds(10, 100, 250, 30);
-        txtResult.setBounds(120, 100, 300, 30);
+        txtResult.setBounds(120, 100, 400, 30);
 
-        btnAdd.setBounds(20, 150, 80, 40);
-        btnSub.setBounds(120, 150, 80, 40);
-        btnMul.setBounds(220, 150, 80, 40);
-        btnDiv.setBounds(320, 150, 80, 40);
+        btnAdd.setBounds(20, 150, 85, 40);
+        btnSub.setBounds(120, 150, 85, 40);
+        btnMul.setBounds(220, 150, 85, 40);
+        btnDiv.setBounds(320, 150, 85, 40);
+        btnEnd.setBounds(415, 150, 85, 40);
         
         //phép cộng
         btnAdd.addActionListener(new ActionListener(){
@@ -112,13 +114,22 @@ public class SimpleCalculator extends JFrame {
             }          
         });
         
+        btnEnd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int chon = JOptionPane.showConfirmDialog(null, "bạn có chắc đóng ứng dụng không?","Exit",JOptionPane.YES_NO_OPTION);
+                if(chon ==JOptionPane.YES_OPTION){
+                    System.exit(0);
+                }
+            }
+        });
         
         
         
         
         add(p);
         setResizable(false); //khóa phóng to nhỏ
-        setSize(450, 250);
+        setSize(550, 250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
